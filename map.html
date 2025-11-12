@@ -1,11 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สถานที่ท่องเที่ยว</title>
+    <title>สถานที่ท่องเที่ยวแนะนำในประเทศไทย</title>
+    <style>
+        body {
+            font-family: "Prompt", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+        }
+
+        header {
+            background-color: #009688;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .place {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 15px;
+            width: 300px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .place:hover {
+            transform: scale(1.03);
+        }
+
+        .place img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .place-content {
+            padding: 15px;
+        }
+
+        .place-content h2 {
+            margin: 10px 0;
+            color: #009688;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #004d40;
+            color: white;
+            padding: 10px 0;
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
-    
+
+    <header>
+        <h1>สถานที่ท่องเที่ยวแนะนำในประเทศไทย</h1>
+        <p>ค้นพบความงดงามทั่วทุกภาคของไทย</p>
+    </header>
+
+    <div class="container">
+        <div class="place">
+            <img src="images/wat.png" alt="วัดอรุณราชวราราม">
+            <div class="place-content">
+                <h2>วัดอรุณราชวราราม</h2>
+                <p>วัดเก่าแก่ริมแม่น้ำเจ้าพระยา จังหวัดกรุงเทพฯ โดดเด่นด้วยพระปรางค์สูงงดงาม สัญลักษณ์ของกรุงเทพมหานคร</p>
+            </div>
+        </div>
+
+        <div class="place">
+            <img src="images/sea.png" alt="หาดป่าตอง ภูเก็ต">
+            <div class="place-content">
+                <h2>หาดป่าตอง</h2>
+                <p>ชายหาดยอดนิยมในจังหวัดภูเก็ต เต็มไปด้วยกิจกรรมทางน้ำ ร้านอาหาร และบรรยากาศคึกคักยามค่ำคืน</p>
+            </div>
+        </div>
+
+        <div class="place">
+            <img src="images/sun.png" alt="ดอยอินทนนท์">
+            <div class="place-content">
+                <h2>ดอยอินทนนท์</h2>
+                <p>ยอดเขาที่สูงที่สุดในประเทศไทย จังหวัดเชียงใหม่ ชมทะเลหมอกและอากาศเย็นตลอดปี</p>
+            </div>
+        </div>
+
+        <div class="place">
+            <img src="images/water.png" alt="น้ำตกเอราวัณ กาญจนบุรี">
+            <div class="place-content">
+                <h2>น้ำตกเอราวัณ</h2>
+                <p>น้ำตกสวย 7 ชั้นในอุทยานแห่งชาติเอราวัณ จังหวัดกาญจนบุรี น้ำใสสีฟ้าเทอร์คอยส์ราวคริสตัล</p>
+            </div>
+        </div>
+
+        <div class="place">
+            <img src="images/seas.png" alt="เกาะพีพี กระบี่">
+            <div class="place-content">
+                <h2>เกาะพีพี</h2>
+                <p>หมู่เกาะที่มีชื่อเสียงระดับโลก จังหวัดกระบี่ น้ำทะเลใส หาดทรายขาว และธรรมชาติที่สวยงามจนต้องไปสัมผัสด้วยตา</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 เว็บไซต์แนะนำสถานที่ท่องเที่ยวในประเทศไทย</p>
+    </footer>
+
 </body>
 </html>
