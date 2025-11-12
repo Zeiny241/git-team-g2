@@ -1,11 +1,285 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>แนะนำสถานที่ท่องเที่ยวและอาหารจังหวัดเลย</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Sarabun', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, #2e7d32, #4caf50);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            background-color: #1b5e20;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .page {
+            display: none;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .active {
+            display: block;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 15px;
+            color: #2e7d32;
+        }
+        
+        .attraction, .food {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .attraction:last-child, .food:last-child {
+            border-bottom: none;
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #e0e0e0;
+            margin: 15px 0;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #757575;
+        }
+        
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .member-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #757575;
+        }
+        
+        footer {
+            background-color: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 5px 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    นี่คือไฟล์แรก
+    <header>
+        <h1>แนะนำสถานที่ท่องเที่ยวและอาหารจังหวัดเลย</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showPage('home')">หน้าแรก</a></li>
+            <li><a href="#" onclick="showPage('attractions')">สถานที่ท่องเที่ยว</a></li>
+            <li><a href="#" onclick="showPage('foods')">อาหารแนะนำ</a></li>
+            <li><a href="#" onclick="showPage('team')">ผู้จัดทำ</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <!-- หน้าแรก -->
+        <div id="home" class="page active">
+            <h2>ยินดีต้อนรับสู่จังหวัดเลย</h2>
+            <p>จังหวัดเลยเป็นจังหวัดในภาคตะวันออกเฉียงเหนือของประเทศไทยที่มีธรรมชาติสวยงาม อากาศเย็นสบายตลอดปี และมีวัฒนธรรมประเพณีที่น่าสนใจ</p>
+            <p>เว็บไซต์นี้จะแนะนำสถานที่ท่องเที่ยวที่น่าสนใจและอาหารท้องถิ่นที่คุณไม่ควรพลาดเมื่อมาเยือนจังหวัดเลย</p>
+            <div class="image-placeholder">
+                ภาพจังหวัดเลย
+            </div>
+        </div>
+        
+        <!-- สถานที่ท่องเที่ยว -->
+        <div id="attractions" class="page">
+            <h2>สถานที่ท่องเที่ยวแนะนำในจังหวัดเลย</h2>
+            
+            <div class="attraction">
+                <h3>1. ภูเรือ</h3>
+                <div class="image-placeholder">ภาพภูเรือ</div>
+                <p>อุทยานแห่งชาติภูเรือ เป็นยอดเขาสูงที่มีอากาศหนาวเย็นตลอดปี มีจุดชมวิวทะเลหมอกที่สวยงาม และมีดอกไม้เมืองหนาวบานสะพรั่งในช่วงฤดูหนาว</p>
+            </div>
+            
+            <div class="attraction">
+                <h3>2. ภูกระดึง</h3>
+                <div class="image-placeholder">ภาพภูกระดึง</div>
+                <p>อุทยานแห่งชาติภูกระดึง เป็นภูเขาหินทรายยอดตัดที่มีพื้นที่ราบกว้างใหญ่ มีน้ำตกและทุ่งดอกไม้สวยงาม เป็นแหล่งท่องเที่ยวทางธรรมชาติที่ได้รับความนิยมมาก</p>
+            </div>
+            
+            <div class="attraction">
+                <h3>3. ทะเลบัวแดง</h3>
+                <div class="image-placeholder">ภาพทะเลบัวแดง</div>
+                <p>ทะเลบัวแดง หรือ กุดหว้า ตั้งอยู่ที่อำเภอเชียงคาน ในช่วงเดือนธันวาคมถึงกุมภาพันธ์ จะมีดอกบัวแดงบานเต็มท้องน้ำสร้างความสวยงามตระการตา</p>
+            </div>
+            
+            <div class="attraction">
+                <h3>4. วัดโพธิ์ชัย</h3>
+                <div class="image-placeholder">ภาพวัดโพธิ์ชัย</div>
+                <p>วัดโพธิ์ชัย ตั้งอยู่ที่อำเภอเมืองเลย เป็นวัดสำคัญที่มีสถาปัตยกรรมล้านช้างที่สวยงาม และเป็นที่ประดิษฐานพระพุทธรูปศักดิ์สิทธิ์คู่บ้านคู่เมือง</p>
+            </div>
+            
+            <div class="attraction">
+                <h3>5. น้ำตกตาดเหือง</h3>
+                <div class="image-placeholder">ภาพน้ำตกตาดเหือง</div>
+                <p>น้ำตกตาดเหือง ตั้งอยู่ที่อำเภอนาแห้ว เป็นน้ำตกขนาดใหญ่ที่มีความสูงประมาณ 100 เมตร ไหลลดหลั่นลงมาเป็นชั้นๆ สวยงามมากในช่วงฤดูฝน</p>
+            </div>
+        </div>
+        
+        <!-- อาหารแนะนำ -->
+        <div id="foods" class="page">
+            <h2>อาหารแนะนำของจังหวัดเลย</h2>
+            
+            <div class="food">
+                <h3>1. ส้มตำปลาร้า</h3>
+                <div class="image-placeholder">ภาพส้มตำปลาร้า</div>
+                <p>ส้มตำปลาร้าสูตรพิเศษของจังหวัดเลย มีรสชาติเผ็ด เค็ม เปรี้ยว กลมกล่อม ใช้ปลาร้าคุณภาพดีและมะเขือเทศท้องถิ่น</p>
+            </div>
+            
+            <div class="food">
+                <h3>2. ก้อยปลาเลย</h3>
+                <div class="image-placeholder">ภาพก้อยปลาเลย</div>
+                <p>ก้อยปลาเลยเป็นอาหารพื้นบ้านที่นิยมกันมาก ใช้ปลาสดจากแม่น้ำเลยมาปรุงรสด้วยพริกขี้หนูสด หอมแดง และสมุนไพรพื้นบ้าน</p>
+            </div>
+            
+            <div class="food">
+                <h3>3. แกงเห็ดรวม</h3>
+                <div class="image-placeholder">ภาพแกงเห็ดรวม</div>
+                <p>จังหวัดเลยมีเห็ดป่าหลากหลายชนิด นำมาทำเป็นแกงเห็ดรวมที่หอมกลิ่นสมุนไพร รสชาติกลมกล่อม เป็นเมนูสุขภาพที่อร่อย</p>
+            </div>
+            
+            <div class="food">
+                <h3>4. ไก่ย่างน้ำปลา</h3>
+                <div class="image-placeholder">ภาพไก่ย่างน้ำปลา</div>
+                <p>ไก่ย่างน้ำปลาสูตรพิเศษของจังหวัดเลย มีเนื้อนุ่มชุ่มฉ่ำ หอมกลิ่นเครื่องเทศ นิยมรับประทานกับข้าวเหนียวและส้มตำ</p>
+            </div>
+            
+            <div class="food">
+                <h3>5. ขนมจีนน้ำยา</h3>
+                <div class="image-placeholder">ภาพขนมจีนน้ำยา</div>
+                <p>ขนมจีนน้ำยาจังหวัดเลยมีรสชาติเผ็ดร้อน หอมกลิ่นเครื่องแกง น้ำยามีความเข้มข้น รับประทานคู่กับผักสดตามฤดูกาล</p>
+            </div>
+        </div>
+        
+        <!-- ผู้จัดทำ -->
+        <div id="team" class="page">
+            <h2>ผู้จัดทำ</h2>
+            
+            <div class="team-member">
+                <div class="member-avatar">ภาพ</div>
+                <div>
+                    <h3>นายสมชาย ใจดี</h3>
+                    <p>นักพัฒนาระบบและออกแบบเว็บไซต์</p>
+                    <p>Email: somchai@example.com</p>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-avatar">ภาพ</div>
+                <div>
+                    <h3>นางสาวสุนิสา วิเศษ</h3>
+                    <p>ผู้เชี่ยวชาญด้านการท่องเที่ยวจังหวัดเลย</p>
+                    <p>Email: sunisa@example.com</p>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-avatar">ภาพ</div>
+                <div>
+                    <h3>นายธนวัฒน์ พัฒนา</h3>
+                    <p>ผู้เชี่ยวชาญด้านอาหารท้องถิ่น</p>
+                    <p>Email: thanawat@example.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 เว็บไซต์แนะนำสถานที่ท่องเที่ยวและอาหารจังหวัดเลย</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // ซ่อนทุกหน้า
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // แสดงหน้าที่เลือก
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
