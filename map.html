@@ -4,68 +4,242 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>สถานที่ท่องเที่ยวแนะนำในประเทศไทย</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: "Prompt", sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: "Prompt", sans-serif;
+        }
+
+        body {
             background-color: #f3f3f3;
+            color: #333;
+            line-height: 1.6;
         }
 
         header {
-            background-color: #009688;
+            background: linear-gradient(135deg, #009688, #004d40);
             color: white;
             text-align: center;
-            padding: 30px 0;
+            padding: 40px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         h1 {
             margin: 0;
-            font-size: 2em;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-weight: 300;
+        }
+
+        .nav-container {
+            background-color: #00695c;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-btn {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-btn:hover {
+            background-color: white;
+            color: #009688;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
 
         .container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            padding: 20px;
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .place {
             background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
             margin: 15px;
             width: 300px;
             overflow: hidden;
-            transition: transform 0.2s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .place:hover {
-            transform: scale(1.03);
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
         }
 
         .place img {
             width: 100%;
             height: 200px;
             object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .place:hover img {
+            transform: scale(1.05);
         }
 
         .place-content {
-            padding: 15px;
+            padding: 20px;
         }
 
         .place-content h2 {
             margin: 10px 0;
             color: #009688;
+            font-size: 1.4em;
+        }
+
+        .place-content p {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .place-btn {
+            display: inline-block;
+            background-color: #009688;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+        }
+
+        .place-btn:hover {
+            background-color: #00796b;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            background: linear-gradient(135deg, #009688, #00796b);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, #00796b, #00695c);
+        }
+
+        .action-btn.secondary {
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+        }
+
+        .action-btn.secondary:hover {
+            background: linear-gradient(135deg, #f57c00, #e65100);
         }
 
         footer {
             text-align: center;
-            background-color: #004d40;
+            background: linear-gradient(135deg, #004d40, #00332a);
             color: white;
-            padding: 10px 0;
-            margin-top: 30px;
+            padding: 25px 20px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-top: 15px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .tagline {
+                font-size: 1em;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-btn {
+                width: 80%;
+                text-align: center;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .action-btn {
+                width: 80%;
+            }
         }
     </style>
 </head>
@@ -73,53 +247,86 @@
 
     <header>
         <h1>สถานที่ท่องเที่ยวแนะนำในประเทศไทย</h1>
-        <p>ค้นพบความงดงามทั่วทุกภาคของไทย</p>
+        <p class="tagline">ค้นพบความงดงามทั่วทุกภาคของไทย</p>
     </header>
+
+    <div class="nav-container">
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-btn">หน้าแรก</a>
+            <a href="#north" class="nav-btn">ภาคเหนือ</a>
+            <a href="#northeast" class="nav-btn">ภาคอีสาน</a>
+            <a href="#central" class="nav-btn">ภาคกลาง</a>
+            <a href="#south" class="nav-btn">ภาคใต้</a>
+            <a href="creater.html" class="nav-btn">เกี่ยวกับเรา</a>
+            <a href="#contact" class="nav-btn">ติดต่อ</a>
+        </div>
+    </div>
 
     <div class="container">
         <div class="place">
-            <img src="images/wat.png" alt="วัดอรุณราชวราราม">
+            <img src="https://via.placeholder.com/300x200/009688/ffffff?text=วัดอรุณ" alt="วัดอรุณราชวราราม">
             <div class="place-content">
                 <h2>วัดอรุณราชวราราม</h2>
                 <p>วัดเก่าแก่ริมแม่น้ำเจ้าพระยา จังหวัดกรุงเทพฯ โดดเด่นด้วยพระปรางค์สูงงดงาม สัญลักษณ์ของกรุงเทพมหานคร</p>
+                <a href="#" class="place-btn">ดูรายละเอียด</a>
             </div>
         </div>
 
         <div class="place">
-            <img src="images/sea.png" alt="หาดป่าตอง ภูเก็ต">
+            <img src="https://via.placeholder.com/300x200/4CAF50/ffffff?text=หาดป่าตอง" alt="หาดป่าตอง ภูเก็ต">
             <div class="place-content">
                 <h2>หาดป่าตอง</h2>
                 <p>ชายหาดยอดนิยมในจังหวัดภูเก็ต เต็มไปด้วยกิจกรรมทางน้ำ ร้านอาหาร และบรรยากาศคึกคักยามค่ำคืน</p>
+                <a href="#" class="place-btn">ดูรายละเอียด</a>
             </div>
         </div>
 
         <div class="place">
-            <img src="images/sun.png" alt="ดอยอินทนนท์">
+            <img src="https://via.placeholder.com/300x200/2196F3/ffffff?text=ดอยอินทนนท์" alt="ดอยอินทนนท์">
             <div class="place-content">
                 <h2>ดอยอินทนนท์</h2>
                 <p>ยอดเขาที่สูงที่สุดในประเทศไทย จังหวัดเชียงใหม่ ชมทะเลหมอกและอากาศเย็นตลอดปี</p>
+                <a href="#" class="place-btn">ดูรายละเอียด</a>
             </div>
         </div>
 
         <div class="place">
-            <img src="images/water.png" alt="น้ำตกเอราวัณ กาญจนบุรี">
+            <img src="https://via.placeholder.com/300x200/00BCD4/ffffff?text=น้ำตกเอราวัณ" alt="น้ำตกเอราวัณ กาญจนบุรี">
             <div class="place-content">
                 <h2>น้ำตกเอราวัณ</h2>
                 <p>น้ำตกสวย 7 ชั้นในอุทยานแห่งชาติเอราวัณ จังหวัดกาญจนบุรี น้ำใสสีฟ้าเทอร์คอยส์ราวคริสตัล</p>
+                <a href="#" class="place-btn">ดูรายละเอียด</a>
             </div>
         </div>
 
         <div class="place">
-            <img src="images/seas.png" alt="เกาะพีพี กระบี่">
+            <img src="https://via.placeholder.com/300x200/FF9800/ffffff?text=เกาะพีพี" alt="เกาะพีพี กระบี่">
             <div class="place-content">
                 <h2>เกาะพีพี</h2>
                 <p>หมู่เกาะที่มีชื่อเสียงระดับโลก จังหวัดกระบี่ น้ำทะเลใส หาดทรายขาว และธรรมชาติที่สวยงามจนต้องไปสัมผัสด้วยตา</p>
+                <a href="#" class="place-btn">ดูรายละเอียด</a>
             </div>
         </div>
     </div>
 
+    <div class="action-buttons">
+        <button class="action-btn">ดูสถานที่ท่องเที่ยวทั้งหมด</button>
+        <button class="action-btn secondary">ดาวน์โหลดแอปแนะนำ</button>
+        <button class="action-btn">ติดต่อทีมงาน</button>
+    </div>
+
     <footer>
-        <p>© 2025 เว็บไซต์แนะนำสถานที่ท่องเที่ยวในประเทศไทย</p>
+        <div class="footer-content">
+            <p>สำรวจประเทศไทยผ่านเว็บไซต์ของเรา</p>
+            <div class="footer-links">
+                <a href="#home">หน้าแรก</a>
+                <a href="#about">เกี่ยวกับเรา</a>
+                <a href="#services">บริการ</a>
+                <a href="#blog">บทความ</a>
+                <a href="#contact">ติดต่อ</a>
+            </div>
+            <p class="copyright">© 2025 เว็บไซต์แนะนำสถานที่ท่องเที่ยวในประเทศไทย | สงวนลิขสิทธิ์</p>
+        </div>
     </footer>
 
 </body>
